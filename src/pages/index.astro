@@ -1,43 +1,30 @@
 ---
+
 import SiteHeader from "@/components/SiteHeader.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
-import UserCard from "@/components/UserCard.astro";
 
-const title="Mi página web sobre Astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const title = "Mi página web sobre Astro";
 const description = "Una larga y detallada descripción de mi página.";
+
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-  </head>
-  <body>
+<!-- En BaseLayout esta todo nuestro head de html, actua como un componente mas -->
+<BaseLayout title={title} description={description}>
 
-    <SiteHeader 
-		title={title}/>
-	
-    <SiteNav />
+	<SiteHeader 
+		title={title} />
 
-    <h2>{title}</h2>
+	<SiteNav />
 
-    <main>
-      <p>Contenido de la página web en cuestión.</p>
-    </main>
-	
+	<h2>{title}</h2>
 
-	<UserCard name="pepe" image="pepe.png">
-		<h2>Information</h2>
-		<p>...</p>
-		<h2>Links</h2>
-		<p>...</p>
-	</UserCard>
+	<main>
+		<p>{description}</p>
+	</main>
 
-    <SiteFooter />
-  </body>
-</html>
+	<SiteFooter />
+
+</BaseLayout>

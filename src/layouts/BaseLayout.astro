@@ -1,0 +1,21 @@
+---
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteNav from "@/components/SiteNav.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <slot /> <!-- Representa todo lo que está dentro de este layout -->
+  </body>
+</html>
