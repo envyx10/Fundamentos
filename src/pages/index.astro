@@ -2,6 +2,7 @@
 import SiteHeader from "@/components/SiteHeader.astro";
 import SiteNav from "@/components/SiteNav.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
+import UserCard from "@/components/UserCard.astro";
 
 const title="Mi página web sobre Astro";
 const description = "Una larga y detallada descripción de mi página.";
@@ -20,7 +21,7 @@ const description = "Una larga y detallada descripción de mi página.";
 
     <SiteHeader 
 		title={title}/>
-
+	
     <SiteNav />
 
     <h2>{title}</h2>
@@ -28,6 +29,14 @@ const description = "Una larga y detallada descripción de mi página.";
     <main>
       <p>Contenido de la página web en cuestión.</p>
     </main>
+	
+
+	<UserCard name="pepe" image="pepe.png">
+		<h2>Information</h2>
+		<p>...</p>
+		<h2>Links</h2>
+		<p>...</p>
+	</UserCard>
 
     <SiteFooter />
   </body>

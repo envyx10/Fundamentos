@@ -1,0 +1,14 @@
+
+---
+const { name, image } = Astro.props;
+---
+<div class="user-card">
+
+  <img src={image} alt={name} />
+
+  <!-- Este slot recoge todo lo que haya dentro de nuestro componente en el index -->
+  <slot></slot> 
+  
+  <p>Tarjeta de usuario.</p>
+
+</div>
