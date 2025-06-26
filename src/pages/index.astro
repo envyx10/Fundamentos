@@ -10,13 +10,23 @@ const title = "Mi página web sobre Astro";
 const description = "Una larga y detallada descripción de mi página.";
 
 ---
+<style is:global> 
+
+/* el atributo is:global agrega estilo global, 
+usar este atributo solo cuando sea necesario*/
+
+	h2 {
+		color: #f02626;
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+</style>
 
 <!-- En BaseLayout esta todo nuestro head de html, actua como un componente mas -->
 <BaseLayout title={title} description={description}>
 
-	<SiteHeader 
-		title={title} />
-
+	<SiteHeader />
 	<SiteNav />
 
 	<h2>{title}</h2>
@@ -24,7 +34,7 @@ const description = "Una larga y detallada descripción de mi página.";
 	<main>
 		<p>{description}</p>
 	</main>
-
+	
 	<SiteFooter />
 
 </BaseLayout>
